@@ -1,7 +1,9 @@
 package pl.lodz.uni.math;
 
 public class MyFirstSingleton {
-   private static MyFirstSingleton instance = new MyFirstSingleton();
+   private static MyFirstSingleton instance = new MyFirstSingleton(); //#new tutaj sprawia ze jestem zabezp. przez wielowatkowoscia
+                                                  //#ale nie kazdy kontakt z klasa musi zabierac pamiec na inicjalizacje tego obiektu
+                                                   //#wiêc pisze = null;
 
    private MyFirstSingleton(){
       System.out.println("YES");
@@ -10,6 +12,8 @@ public class MyFirstSingleton {
    public static MyFirstSingleton getInstance()
    {
       System.out.println("getInstance");
+      //#if(instance==null)
+         //#instance = new MyFirstSingleton();
       return instance;
       //return new MyFirstSingleton(); - jako 1 sie wywola
    }
