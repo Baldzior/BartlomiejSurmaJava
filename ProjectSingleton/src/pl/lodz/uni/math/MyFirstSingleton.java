@@ -32,3 +32,10 @@ public class MyFirstSingleton {
 //2.publiczna statyczna metoda zwracajaca obiekt mojego typu
 //3.obiekt przechowuje wewnatrz prywatnej statycznej mojego typu ktory moge zainicjowac od razu lub przy pierwszym wywolaniu
 //4. wewnatrz mojej klasy musze miec prywatna statyczna zmienna do przechowywania obiektu mojej klasy
+
+/*
+1. Blok static wywoluje sie tylko raz (na rzecz klasy).
+2. Przed dzialaniem konstruktora zawsze wywola sie blok inicjalizacji.
+3. Bezwzgledne pierwszenstwo ma blok static -> metoda static chyba, ze w konstruktorze klasy jest juz tworzenie obiektu tej klasy (kazdy kontakt z klasa
+powoduje jego utworzenie)
+*/
