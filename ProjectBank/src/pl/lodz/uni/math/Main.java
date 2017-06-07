@@ -6,17 +6,30 @@ public class Main {
       Bank bank1 = Bank.getInstance();
       Bank bank2 = Bank.getInstance();
 
-      Client client1 = bank1.createClient("Kowalski", "Jan", "Lodz", "Pomorska 21", "1");
+      Client client1 = bank1.createClient("Kowalski", "Jan", "Lodz", "Pomorska 21", "111222333");
+      Client client2 = bank2.createClient("Nowak", "El¿bieta", "Skierniewice", "Sosnowa 105", "333222111");
+      
+      System.out.println("\n");
+      bank2.listClients();
 
       Account account1 = client1.createAccount("12-1212-1212");
       Account account2 = client1.createAccount("13-1313-1313");
-      account1.makeTransaction(TransactionType.DEPOSIT, 3000);
-      account1.makeTransaction(account2, 150);
-
-      bank2.listClients();
-      System.out.println("\n");
+      Account account3 = client2.createAccount("14-1414-1414");
+      
       client1.listAccounts();
-      System.out.println("\n");
+      client2.listAccounts();
+      
+      account1.makeTransaction(TransactionType.DEPOSIT, 3000);
+      account1.makeTransaction(TransactionType.WITHDRAW, 5000);
+      account1.makeTransaction(TransactionType.TEST, 200);
+      account1.makeTransaction(account1, 100);
+      account1.makeTransaction(account3, 100);
+      account1.makeTransaction(account2, 1000);
+      account1.makeTransaction(account2, 10000);
+      
+      client1.getBilling();
+      
+      client2.getBilling();
 
    }
 

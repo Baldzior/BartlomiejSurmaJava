@@ -42,5 +42,24 @@ public class Account {
    public void historyAdd(Transaction transaction) {
       transactions.add(transaction);
    }
+   
+   public void historyShow() {
+
+      System.out.print(String.format("%-5s", "ID"));
+      System.out.print(String.format("%-15s", "Type"));
+      System.out.print(String.format("%-20s", "Sender"));
+      System.out.print(String.format("%-20s", "Receiver"));
+      System.out.print(String.format("%-15s", "Value"));
+      System.out.println(String.format("%-10s", "Status"));
+   
+      for (Transaction t : transactions) {
+         System.out.print(String.format("%-5s", transactions.indexOf(t)+1 + "."));
+         System.out.print(String.format("%-15s", t.getType()));
+         System.out.print(String.format("%-20s", t.getSender().getOwner().getFullName()));
+         System.out.print(String.format("%-20s", t.getReceiver().getOwner().getFullName()));
+         System.out.print(String.format("%-15s", t.getValue()));
+         System.out.println(String.format("%-10s", t.getStatus()));
+      }
+   }
 
 }

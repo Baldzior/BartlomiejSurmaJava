@@ -54,7 +54,7 @@ public class Transaction {
       }
       receiver.historyAdd(this);
    }
-
+   
    private void makeTransfer() {
       if (sender.getAccountId() != receiver.getAccountId()) {
          if (sender.getBalance() >= this.value) {
@@ -69,4 +69,25 @@ public class Transaction {
       }
       sender.historyAdd(this);
    }
+
+   public TransactionType getType() {
+      return type;
+   }
+   
+   public TransactionStatus getStatus() {
+      return status;
+   }
+   
+   public double getValue() {
+      return value;
+   }
+   
+   public Account getReceiver() {
+      return receiver;
+   }
+   
+   public Account getSender() {
+      return sender;
+   }
+   
 }
