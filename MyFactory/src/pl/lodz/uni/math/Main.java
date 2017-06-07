@@ -10,7 +10,7 @@ public class Main {
       Factory factory=new Factory();
       
       factory.setSource(Source.DB);
-      System.out.println(factory.getPersonById(10).getName());    //getname
+      System.out.println(factory.getPersonById(10).getName()); 
       System.out.println(factory.getAllPersons().get(2).getName());
       
       factory.setSource(Source.XML);
