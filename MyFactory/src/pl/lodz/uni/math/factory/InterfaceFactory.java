@@ -3,8 +3,8 @@ import java.util.List;
 
 import pl.lodz.uni.math.domain.Person;
 
-public interface InterfaceFactory {
-
-  public List<Person> getAllPersons();
-  public Person getPersonById(int id);
+public interface InterfaceFactory
+{
+  public void selectAllPersons();
+  public void selectUserById(int id);
 }

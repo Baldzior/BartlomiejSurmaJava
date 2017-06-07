@@ -6,34 +6,41 @@ import java.util.List;
 import pl.lodz.uni.math.domain.Person;
 import pl.lodz.uni.math.factory.InterfaceFactory;
 
-public class WsSource implements InterfaceFactory{
-
+public class WsSource implements InterfaceFactory
+{
    private static InterfaceFactory instance = new WsSource();
    
-   private WsSource(){
-      System.out.println("WSdata");      //moze tak chyba zostac
+   List<Person> persons = new ArrayList<Person>();
+   Person p1 = new Person("Ania0", 22, "30295019281");
+   Person p2 = new Person("Ania1", 22, "30295019281");
+   Person p3 = new Person("Ania2", 22, "30295019281");
+   
+   private WsSource()
+   {
+      System.out.println("*** WSdata ***");
+      persons.add(p1);
+      persons.add(p2);
+      persons.add(p3);
    }
    
-   public static InterfaceFactory getInstance() //singleton
+   public static InterfaceFactory getInstance()
    {
       return instance;
    }
    
    @Override
-   public List<Person> getAllPersons() {
-      List<Person> persons = new ArrayList<Person>();
-      Person p1 = new Person("Dominik", 22, "92863209876");
-      for (int i=0;i<5;i++)
+   public void selectAllPersons()
+   {
+      for (Person person : persons)
       {
-         persons.add(p1);
+         System.out.println(person.getName());
       }
-      return persons;
+      System.out.print("\n");
    }
 
    @Override
-   public Person getPersonById(int id) {
-      Person p1 = new Person("Sebastian", 19, "12340987560");
-      return p1;
-      
+   public void selectUserById(int id)
+   {
+      System.out.println(persons.get(id).getName());
    }
 }
