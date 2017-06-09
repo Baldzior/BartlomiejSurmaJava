@@ -31,7 +31,7 @@ public class Client {
    }
 
    public void listAccounts() {
-      System.out.println("Customer accounts " + getFullName() + ":");
+      System.out.println("Konta klienta " + getFullName() + ":");
       for (Account account : accounts) {
          System.out.println(accounts.indexOf(account) + 1 + ". " + account.getAccountId());
       }
