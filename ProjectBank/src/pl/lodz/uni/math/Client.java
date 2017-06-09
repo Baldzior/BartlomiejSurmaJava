@@ -11,8 +11,8 @@ public class Client {
    private String cellPhone;
    private List<Account> accounts = new ArrayList<Account>();
 
-   public Client(String clientfirstName, String clientLastName, String clientCity, String clientStreet, String clientCellPhone) {
-      firstName = clientfirstName;
+   public Client(String clientFirstName, String clientLastName, String clientCity, String clientStreet, String clientCellPhone) {
+      firstName = clientFirstName;
       lastName = clientLastName;
       city = clientCity;
       street = clientStreet;
