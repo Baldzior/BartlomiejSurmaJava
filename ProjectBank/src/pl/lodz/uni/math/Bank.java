@@ -24,7 +24,7 @@ public class Bank {
    
    public static Bank getInstance() {
       if (bank == null) {
-         System.out.println("Brak banku, wprowadz dane:");
+         System.out.println("No bank, enter data:");
          bank = new Bank(setBankName(), setBankCity(), setBankStreet(), setBankId());
       }
       return bank;
@@ -38,7 +38,7 @@ public class Bank {
    }
 
    public void listClients() {
-      System.out.println("Klienci banku " + getName() + ":");
+      System.out.println("Bank customers " + getName() + ":");
       for (Client client : clients) {
          System.out.println(clients.indexOf(client) + 1 + ". " + client.getFullName());
       }
@@ -46,7 +46,7 @@ public class Bank {
    }
 
    static String setBankName() {
-      System.out.println("Nazwa banku :");
+      System.out.println("Bank name :");
       name = input.nextLine();
       return name;
    }
@@ -56,19 +56,19 @@ public class Bank {
    }
 
    static String setBankCity() {
-      System.out.println("Miasto :");
+      System.out.println("City:");
       city = input.nextLine();
       return city;
    }
 
    static String setBankStreet() {
-      System.out.println("Ulica:");
+      System.out.println("Street:");
       street = input.nextLine();
       return street;
    }
 
    static String setBankId() {
-      System.out.println("Numer:");
+      System.out.println("Number:");
       id = input.nextLine();
       return id;
    }
