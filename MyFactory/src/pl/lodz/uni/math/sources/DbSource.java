@@ -5,43 +5,36 @@ import java.util.List;
 
 import pl.lodz.uni.math.domain.Person;
 import pl.lodz.uni.math.factory.InterfaceFactory;
-import pl.lodz.uni.math.factory.Source;
 
-public class DbSource implements InterfaceFactory
-{
+public class DbSource implements InterfaceFactory{
+   
    private static InterfaceFactory instance = new DbSource();
    
-   List<Person> persons = new ArrayList<Person>();
-   Person p1 = new Person("Bartek0", 22, "30295019281");
-   Person p2 = new Person("Bartek1", 22, "30295019281");
-   Person p3 = new Person("Bartek2", 22, "30295019281");
+   private DbSource() { System.out.println("DBdata");}
    
-   private DbSource()
-   {
-      System.out.println("*** DBdata ***");
-      persons.add(p1);
-      persons.add(p2);
-      persons.add(p3);
-   }
-   
-   public static InterfaceFactory getInstance()
+   public static InterfaceFactory getInstance() //singleton
    {
       return instance;
    }
 
    @Override
-   public void selectAllPersons()
-   {
-      for (Person person : persons)
+   public List<Person> getAllPersons() {
+      List<Person> persons = new ArrayList<Person>();
+      Person p1 = new Person("Bartek", 22, "30295019281");
+      for (int i=0;i<5;i++)
       {
-         System.out.println(person.getName());
+         persons.add(p1);
       }
-      System.out.print("\n");
+      return persons;
    }
 
    @Override
-   public void selectUserById(int id)
-   {
-      System.out.println(persons.get(id).getName());
+   public Person getPersonById(int id) {
+      Person p1 = new Person("Beta", 19, "49198294501");
+      return p1;
+      
    }
+   
+   
+   
 }

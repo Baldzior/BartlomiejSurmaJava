@@ -6,42 +6,38 @@ import java.util.List;
 import pl.lodz.uni.math.domain.Person;
 import pl.lodz.uni.math.factory.InterfaceFactory;
 
-public class XmlSource implements InterfaceFactory
-{
+public class XmlSource implements InterfaceFactory{
+   
    private static InterfaceFactory instance = new XmlSource();
    
-   List<Person> persons = new ArrayList<Person>();
-   Person p1 = new Person("Kacper0", 22, "30295019281");
-   Person p2 = new Person("Kacper1", 22, "30295019281");
-   Person p3 = new Person("Kacper2", 22, "30295019281");
-   
-   private XmlSource()
-   {
-      System.out.println("*** XMLdata ***");
-      persons.add(p1);
-      persons.add(p2);
-      persons.add(p3);
+   private XmlSource(){
+      System.out.println("XMLdata");      //moze tak chyba zostac
    }
    
-   public static InterfaceFactory getInstance()
+   public static InterfaceFactory getInstance()   //singleton
    {
       return instance;
    }
 
    @Override
-   public void selectAllPersons()
-   {
-      for (Person person : persons)
+   public List<Person> getAllPersons() {
+      List<Person> persons = new ArrayList<Person>();
+      Person p1 = new Person("Ania", 55, "12345678901");
+      for (int i=0;i<5;i++)
       {
-         System.out.println(person.getName());
+         persons.add(p1);
       }
-      System.out.print("\n");
+      return persons;
    }
       
 
    @Override
-   public void selectUserById(int id)
-   {
-      System.out.println(persons.get(id).getName());
-   }  
+   public Person getPersonById(int id) {
+      Person p1 = new Person("Krzysztof", 25, "09876543210");
+      return p1;
+   }
+   
+   
+   
+   
 }
